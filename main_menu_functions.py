@@ -51,5 +51,5 @@ class Main_menu_services:
                 brand, parking_name = manager.find_car_by_plate(license_plate)
                 if brand:
                     print(f"Car with license plate {license_plate}, {brand} found in {parking_name}.")
-                    return
+                    return brand, parking_name
         print(f"No matching car found in any parking space.")

@@ -130,7 +130,6 @@ class TestParkingSystem(unittest.TestCase):
     @patch('os.path.join', lambda a, b: f"{a}/{b}")
     @patch('os.listdir')
     def test_find_car_by_plate_found(self, mock_listdir):
-        # Mock data
         parking_dirs = ['TestParking1', 'TestParking2']
         car_files = {'TestParking1': ['ABC123.txt', 'DEF456.txt'], 'TestParking2': ['GHI789.txt']}
         car_data = {'ABC123.txt': 'ABC123, Toyota\n', 'DEF456.txt': 'DEF456, Honda\n', 'GHI789.txt': 'GHI789, Ford\n'}

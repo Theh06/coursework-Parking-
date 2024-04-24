@@ -1,4 +1,4 @@
-import unittest, os
+import unittest, os, shutil
 from car_manager import TextCarManager
 from unittest.mock import patch, MagicMock, mock_open, call
 from main_menu_functions import Main_menu_services
@@ -87,7 +87,16 @@ class TestParkingSystem(unittest.TestCase):
         mock_remove.assert_called_once_with(file_path)
 
     #-----------------------------------
-    filePath = "/parkings/Testparking"
-    os.rmdir(filePath)
+    def test_cleaning(self):
+            current_directory = os.path.dirname(os.path.abspath(__file__))
+            folder_path = os.path.join(current_directory, "parkings", "TestParking")
+            
+            try:
+                shutil.rmtree(folder_path)
+                print("Test folder deleted")
+            except Exception as e:
+                print("ERROR", e)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -59,7 +59,7 @@ Kodo pavyzdys:
         with open(file_path, 'w') as file:
             file.write(f'{license_plate}, {brand}\n')
 ```
-4.	Paveldėjimas (Inheritance):
+3.	Paveldėjimas (Inheritance):
 „TextCarManager“ paveldi iš „CarManager“, perimdamas abstrakčius metodus ir pridėdamas naujas funkcijas, tokias kaip „edit_car“ ir „find_car_by_plate“.
 Kodo pavyzdys:
 ```
@@ -68,7 +68,7 @@ class TextCarManager(CarManager):
         # įgyvendinimas čia
 ```
 
-6.	Polimorfizmas (Polymorphism):
+4.	Polimorfizmas (Polymorphism):
 Polimorfizmas įgyvendinamas per paveldėjimo ir metodų perėmimo mechanizmą. Skirtingi „CarManager“ paveldėtojai gali turėti skirtingas automobilių pridėjimo, pašalinimo ir išvardijimo metodų realizacijas, todėl šie objektai gali būti naudojami per bendrą sąsają.
 Kodo pavyzdys:
 ```
@@ -90,7 +90,7 @@ class TextCarManager(CarManager):
             cls._instance = super().__new__(cls)
         return cls._instance
 ```
-3.	Factory Method:
+2.	Factory Method:
 Klasė „CarManagerFactory“ įgyvendina „Factory Method“ projektavimo modelį, pateikdama statinį metodą „get_manager“, kuris sukuria ir grąžina objektą „TextCarManager“ arba kitus galimus tvarkytuvus, priklausomai nuo parametro „manager_type“. Tai leidžia dinamiškai keisti sukurto tvarkytuvo tipą nekeičiant kliento kodo.
       Kodo pavyzdys:
   	```
